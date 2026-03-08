@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedStore - Premium Fitness & Lifestyle Products</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="stylesheet" href="colors.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="navbar">
+            <!-- Brand Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="RedStore - Premium Products Logo" title="RedStore">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul id="MENUITEMS" class="menu-list">
+                    <li class="menu-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="menu-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="menu-item"><a href="#products" class="nav-link">Products</a></li>
+                    <li class="menu-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- hero section with image carousel -->
+        <div class="row">
+            <div class="col-2">
+                <h2>Give Your Workout<br>A New Style</h2>
+                <p>Success isn't always about greatness. It's about consistency. Consistent hard work leads to success.
+                    Greatness will come.</p>
+                <a href="#" class="btn" onclick="showButtonSpinner(event)">Get Started <span class="btn-spinner"
+                        style="display: none;"></span></a>
+            </div>
+            <!-- Hero Carousel -->
+            <div class="col-2 carousel-hero">
+                <div class="carousel-container">
+                    <div class="carousel-spinner" id="heroCarouselSpinner" style="display: none;"></div>
+                    <div class="carousel-slide fade">
+                        <img src="images/image1.png" alt="Workout illustration 1">
+                    </div>
+                    <div class="carousel-slide fade">
+                        <img src="images/product-5.jpg" alt="Workout illustration 2">
+                    </div>
+                    <div class="carousel-slide fade">
+                        <img src="images/product-7.jpg" alt="Workout illustration 3">
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-nav prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="carousel-nav next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- categories -->
+        <div class="categories">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="images/category-1.jpg" alt="category 1">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/category-2.jpg" alt="category 2">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/category-3.jpg" alt="category 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- featured products with carousel -->
+        <div class="small-container">
+            <h2 class="title">Featured Products</h2>
+            <!-- Loading indicator -->
+            <div class="triple-spinner" id="productLoadingSpinner"
+                style="margin-bottom: 20px; display: none; margin-left: auto; margin-right: auto; justify-content: center;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Product Carousel -->
+            <div class="product-carousel">
+                <div class="carousel-wrapper">
+                    <div class="carousel-spinner" id="productCarouselSpinner" style="display: none;"></div>
+                    <div class="carousel-track">
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-1.jpg" alt="Red Printed T-Shirt">
+                                <h4>Red Printed T-Shirt</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$500.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-2.jpg" alt="HRX">
+                                <h4>HRX</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$490.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-3.jpg" alt="Trouser">
+                                <h4>Trouser</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$350.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-4.jpg" alt="PUMA T_SHIRT">
+                                <h4>PUMA T_SHIRT</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$550.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-5.jpg" alt="JORDAN">
+                                <h4>JORDAN</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$650.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-6.jpg" alt="JT-SHIRT">
+                                <h4>JT-SHIRT</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$500.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-7.jpg" alt="HRX SOCKS">
+                                <h4>HRX SOCKS</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$300.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-8.jpg" alt="FOSSIL">
+                                <h4>FOSSIL</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$500.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-9.jpg" alt="JT-SHIRT">
+                                <h4>JT-SHIRT</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$500.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-10.jpg" alt="HRX">
+                                <h4>HRX</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$490.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-11.jpg" alt="Trouser">
+                                <h4>Trouser</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$350.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-4">
+                                <img src="images/product-12.jpg" alt="PUMA T_SHIRT">
+                                <h4>PUMA T_SHIRT</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                </div>
+                                <p>$550.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Carousel Controls -->
+                <button class="product-carousel-nav prev" onclick="scrollProducts(-1)">&#10094;</button>
+                <button class="product-carousel-nav next" onclick="scrollProducts(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- offer section -->
+        <div class="offer">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/exclusive.png" class="special-offer" alt="Smart Band 4">
+                    </div>
+                    <div class="col-2">
+                        <p>Exclusively Available on RedStore</p>
+                        <h1>Smart Band 4</h1>
+                        <small>The Mi Smart Band 4 features a 39.9% larger (than Mi Band 3) AMOLED color full-touch
+                            display with adjustable brightness, so everything is clear as can be.</small>
+                        <div>
+                            <a href="#" class="btn" onclick="showButtonSpinner(event)">Buy Now &#8594; <span
+                                    class="btn-spinner" style="display: none;"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- testimonials -->
+        <div class="testimonial">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <span class="pulse-spinner" style="margin-left: 10px; vertical-align: middle;\"></span>
+                        <p>Product is good and has the best quality.</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                        </div>
+                        <img src="images/user-1.png" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <span class="pulse-spinner" style="margin-left: 10px; vertical-align: middle;\"></span>
+                        <p>Product is good and has the best quality.</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                        </div>
+                        <img src="images/user-2.png" alt="John Doe">
+                        <h3>John Doe</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- brands -->
+        <div class="brands">
+            <div class="small-container">
+                <div class="row">
+                    <img src="images/logo-godrej.png" alt="Godrej">
+                    <img src="images/logo-oppo.png" alt="Oppo">
+                    <img src="images/logo-coca-cola.png" alt="Coca-Cola">
+                    <img src="images/logo-paypal.png" alt="Paypal">
+                    <img src="images/logo-philips.png" alt="Philips">
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-wrapper">
+                <div class="footer-section footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="Play Store">
+                        <img src="images/app-store.png" alt="App Store">
+                    </div>
+                </div>
+
+                <div class="footer-section footer-col-2">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#">Coupons</a></li>
+                        <li><a href="#">Blog Post</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Join Affiliate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">Copyright 2024 - RedStore</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== MENU TOGGLE =====
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.getElementById('MENUITEMS');
+
+        menuToggle.addEventListener('click', function () {
+            menuList.classList.toggle('show');
+            menuToggle.classList.toggle('active');
+        });
+
+        const menuLinks = document.querySelectorAll('.nav-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                menuList.classList.remove('show');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // ===== PAGE LOADER =====
+        window.addEventListener('load', function () {
+            const pageLoader = document.getElementById('pageLoader');
+            pageLoader.style.transition = 'opacity 0.5s ease-out';
+            pageLoader.style.opacity = '0';
+            setTimeout(() => {
+                pageLoader.style.display = 'none';
+            }, 500);
+        });
+
+        // ===== BUTTON SPINNER =====
+        function showButtonSpinner(event) {
+            event.preventDefault();
+            const btn = event.target.closest('.btn');
+            const spinner = btn.querySelector('.btn-spinner');
+            if (spinner) {
+                spinner.style.display = 'inline-block';
+                btn.style.opacity = '0.8';
+                btn.style.cursor = 'not-allowed';
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                }, 2000);
+            }
+        }
+
+        // ===== PRODUCT LOADING SPINNER =====
+        // Show spinner for 3 seconds on page load to simulate product image loading
+        window.addEventListener('load', function () {
+            const productLoadingSpinner = document.getElementById('productLoadingSpinner');
+            productLoadingSpinner.style.display = 'inline-flex';
+            setTimeout(() => {
+                productLoadingSpinner.style.display = 'none';
+            }, 3000);
+        });
+
+        // ===== HERO IMAGE CAROUSEL =====
+        let heroSlideIndex = 1;
+        showSlide(heroSlideIndex);
+
+        // Auto advance hero carousel every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        function changeSlide(n) {
+            const spinner = document.getElementById('heroCarouselSpinner');
+            spinner.style.display = 'block';
+            showSlide(heroSlideIndex += n);
+            setTimeout(() => {
+                spinner.style.display = 'none';
+            }, 1000);
+        }
+
+        function currentSlide(n) {
+            showSlide(heroSlideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('carousel-slide');
+            const dots = document.getElementsByClassName('dot');
+
+            if (n > slides.length) {
+                heroSlideIndex = 1;
+            }
+            if (n < 1) {
+                heroSlideIndex = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+            slides[heroSlideIndex - 1].style.display = 'block';
+            dots[heroSlideIndex - 1].className += ' active';
+        }
+
+        // ===== PRODUCT CAROUSEL =====
+        function scrollProducts(direction) {
+            const track = document.querySelector('.carousel-track');
+            const spinner = document.getElementById('productCarouselSpinner');
+            const itemWidth = document.querySelector('.carousel-item').offsetWidth + 20;
+            const scrollAmount = itemWidth * direction;
+
+            // Show spinner during scroll
+            spinner.style.display = 'block';
+
+            track.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+
+            // Hide spinner after animation completes
+            setTimeout(() => {
+                spinner.style.display = 'none';
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
